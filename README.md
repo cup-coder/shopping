@@ -1,2 +1,3 @@
 # shopping
-测试项目
+# 启动服务
+node ./www/bin
