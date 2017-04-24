@@ -1,5 +1,5 @@
 module.exports = {
-    port: 3000,
+    port: 4000,
     mysql: {
         database: 'shopping',
         username: 'surui123',
