@@ -8,11 +8,6 @@ const path = require('path');
 const apiRoutes = require('../routes/api.server.routes');
 const apiController = require('../controllers/api.server.controller');
 
-const pathSet = new Set([
-    '/',
-    '/login',
-]);
-
 function creatApp(config) {
     const app = express();
     app.set('json spaces', 4);
@@ -33,16 +28,6 @@ function creatApp(config) {
 
     apiRoutes(app);
 
-    app.use((req, res, next) => {
-        if (req.method === 'GET' && pathSet.has(req.path)) {
-            res.json({
-                code: 0,
-                msg: "Sorry, request not exist."
-            });
-        } else {
-            next();
-        }
-    });
     return app;
 };
 
